@@ -2,8 +2,6 @@ import std/[httpclient, json]
 
 var token*: string = ""
 type DiscordClient* = object
-  userAgent: string = ""
-
   loginUrl: string = "https://discord.com/api/v9/auth/login"
   totpUrl: string = "https://discord.com/api/v9/auth/mfa/totp"
   logoutUrl: string = "https://discord.com/api/v9/auth/logout"
