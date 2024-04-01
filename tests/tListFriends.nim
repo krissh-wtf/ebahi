@@ -7,5 +7,6 @@ let credentials = parseJson(readFile("tests/other/credentials.json"))
 var 
     token: string = credentials["token"].getStr()
 
-echo "### LOGIN WITH TOKEN ###"
-echo client.login(token)
+echo "### GET FRIENDS LIST ###"
+discard client.login(token)
+echo client.listFriends()

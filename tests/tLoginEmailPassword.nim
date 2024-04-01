@@ -8,4 +8,5 @@ let
     email: string = credentials["email"].getStr()
     password: string = credentials["password"].getStr()
 
-echo client.login(email, password, "123243")
+echo "### LOGIN WITH EMAIL AND PASSWORD AND MFA ###"
+echo client.login(email, password, totp,"123243")
