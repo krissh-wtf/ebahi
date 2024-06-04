@@ -4,16 +4,15 @@ a nim library for the private discord user api
 ### WORK IN PROGRESS !!!!!!!!!!!!
 
 # usage
-login thru email and password:
+login thru email and password (supports mfa if needed):
 ```
 import ebahi
 
 let 
-    client = DiscordClient()
-    email = john@doe.com
-    password = iloveyoujanedoe123
+    request = login("john@doe.net", "coolboy123", 123456, totp)
+    response = response(request.body)
 
-echo client.login(email, password) # if you have totp you can add your code as a third arg in the proc
+echo "logged in as: " & response["username"]
 ```
 
 login thru token
@@ -21,8 +20,8 @@ login thru token
 import ebahi
 
 let 
-    client = DiscordClient()
-    token = "A1B2C3D4BLAGJKDL"
+    request = login("A1B2C3D4BLAGJKDL")
+    response = response(request.body)
 
-echo client.login(token)
+echo "logged in as: " & response["username"]
 ```
